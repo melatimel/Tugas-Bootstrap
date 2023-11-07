@@ -27,44 +27,81 @@
         <div class="row">
             <div class="row col-md-12 mt-2" id="listBarang">
                     <!-- Kerjakan dibawah ini! -->
-                    <div class="card" style="width:185px">
-                        <img class="card-img-top" src="logitek.jpg" alt="Card image">
-                        <div class="card-body">
-                          <h2 class="card-title">Keyboard Logitek</h2>
-                          <p class="card-text">RP.60.000.00.</p>
-                          <a href="#" class="btn btn-primary">Add To Cart</a>
-                        </div>
+                    <div class="card" style="width:200px">
+                      <img class="card-img-top" src="logitek.jpg" alt="Card image">
+                      <div class="card-body">
+                        <h2 class="card-title">Keyboard Logitek</h2>
+                        <p class="card-text">keyboard yang mantap untuk kantoran.</p>
+                        <p class="card-text">RP.60.000.00.</p>
+                        <a href="#" class="btn btn-primary">Add To Cart</a>
                       </div>
+                    </div>
 
-                      <div class="card" style="width:185px">
-                        <img class="card-img-top" src="msi.jpg" alt="Card image">
-                        <div class="card-body">
-                          <h2 class="card-title">Keyboard MSI</h2>
-                          <p class="card-text">RP.300.000.00</p>
-                          <a href="#" class="btn btn-primary">Add To Cart</a>
-                        </div>
+                    <div class="card" style="width:200px">
+                      <img class="card-img-top" src="msi.jpg" alt="Card image">
+                      <div class="card-body">
+                        <h2 class="card-title">Keyboard MSI</h2>
+                        <p class="card-text">Keyboard gaming MSI mekanik</p>
+                        <p class="card-text">RP.300.000.00</p>
+                        <a href="#" class="btn btn-primary">Add To Cart</a>
                       </div>
+                    </div>
 
-                      <div class="card" style="width:185px">
-                        <img class="card-img-top" src="genius.jpeg" alt="Card image">
-                        <div class="card-body">
-                          <h2 class="card-title">Mouse Genius</h2>
-                          <p class="card-text">RP.50.000.00.</p>
-                          <a href="#" class="btn btn-primary">Add To Cart</a>
-                        </div>
+                    <div class="card" style="width:200px">
+                      <img class="card-img-top" src="genius.jpeg" alt="Card image">
+                      <div class="card-body">
+                        <h2 class="card-title">Mouse Genius</h2>
+                        <p class="card-text">Mouse Genius biar lebih pinter</p>
+                        <p class="card-text">RP.50.000.00.</p>
+                        <a href="#" class="btn btn-primary">Add To Cart</a>
                       </div>
+                    </div>
 
-                      <div class="card" style="width:185px">
-                        <img class="card-img-top" src="jerry.jpg" alt="Card image">
-                        <div class="card-body">
-                          <h2 class="card-title">Mouse Jerry</h2>
-                          <p class="card-text">RP.30.000.00.</p>
-                          <a href="#" class="btn btn-primary">Add To Cart</a>
-                        </div>
+                    <div class="card" style="width:200px">
+                      <img class="card-img-top" src="jerry.jpg" alt="Card image">
+                      <div class="card-body">
+                        <h2 class="card-title">Mouse Jerry</h2>
+                        <p class="card-text">Mouse yang disukai kucing</p>
+                        <p class="card-text">RP.30.000.00.</p>
+                        <a href="#" class="btn btn-primary">Add To Cart</a>
                       </div>
-            </div>
-        </div>
-    </div>
+                    </div>
+          </div>
+      </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $("#searchItem").click(function (e) {
+              e.preventDefault();
+              var keyword = $("#keyword").val().toLowerCase();
+              $(".card").each(function () {
+                  var cardTitle = $(this).find(".card-title").text().toLowerCase();
+                  if (cardTitle.includes(keyword)) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+              });
+          });
+   });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+  $(document).ready(function () {
+      var cartCount = 0;
+  
+      $(".btn.btn-primary").click(function (e) {
+        e.preventDefault();
+        cartCount++; 
+        if (cartCount > 9) {
+          $("#cartItemCount").text("9+");
+        } else {
+          $("#cartItemCount").text(cartCount);
+        }
+      });
+  });
+  </script>              
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
